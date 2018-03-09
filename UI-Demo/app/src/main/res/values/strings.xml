@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">UI-Demo</string>
+    <string name="linear_layout">Linear Layout</string>
+    <string name="relative_layout">Relative Layout</string>
+    <string name="i_am_a_linear_layout">I am a Linear-Layout</string>
+    <string name="i_am_a_constraint_layout">I am a Constraint-Layout</string>
+    <string name="ui_demo">UI-Demo</string>
+    <string name="produkt_id">Produkt-ID</string>
+    <string name="menge">Menge</string>
+    <string name="sondertarif">Sondertarif</string>
+    <string name="preis_berechnen">Preis berechnen</string>
+    <string name="alle_preisangaben_ohne_gew_hr">Preisangaben ohne Gewähr</string>
+    <string name="ich_bin_ein_vertikales_linearlayout">Ich bin ein vertikales LinearLayout</string>
+    <string name="ich_bin_ein_horizontales_linearlayout">Ich bin ein horizontales LinearLayout</string>
+</resources>
