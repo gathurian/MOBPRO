@@ -7,6 +7,35 @@
     android:orientation="vertical"
     tools:context="com.example.alex.ui_demo.MainActivity">
 
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/hslu_mobile_programming"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/willkommen_zum_zweiten_kursblock"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:background="@color/purple"
+        android:text="@string/_1_layout"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">

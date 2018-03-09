@@ -12,4 +12,7 @@
     <string name="alle_preisangaben_ohne_gew_hr">Preisangaben ohne Gewähr</string>
     <string name="ich_bin_ein_vertikales_linearlayout">Ich bin ein vertikales LinearLayout</string>
     <string name="ich_bin_ein_horizontales_linearlayout">Ich bin ein horizontales LinearLayout</string>
+    <string name="hslu_mobile_programming">HSLU - Mobile Programming</string>
+    <string name="willkommen_zum_zweiten_kursblock">Willkommen zum zweiten Kursblock!</string>
+    <string name="_1_layout">1. Layout</string>
 </resources>
