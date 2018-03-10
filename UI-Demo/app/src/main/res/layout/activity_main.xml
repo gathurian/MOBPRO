@@ -7,74 +7,114 @@
     android:orientation="vertical"
     tools:context="com.example.alex.ui_demo.MainActivity">
 
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/hslu_mobile_programming"
-        android:textSize="20sp"/>
-
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/willkommen_zum_zweiten_kursblock"
-        android:textSize="16sp"/>
-
-    <TextView
-        android:id="@+id/textView13"
-        android:layout_width="match_parent"
-        android:layout_height="32dp"
-        android:background="@color/purple"
-        android:text="@string/_1_layout"
-        android:textSize="16sp" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="TextView" />
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <RadioGroup
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
-            <RadioButton
-                android:id="@+id/radiobutton_linearLayout"
-                android:layout_width="78dp"
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="@string/title"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/welcome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/welcome"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/titleLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="@dimen/paddingTitlePurple"
+                android:background="@color/purple"
+                android:text="@string/layoutTitle"
+                android:textSize="@dimen/titlePurple"
+                />
+
+            <TextView
+                android:id="@+id/layoutChooser"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/layoutText"
+                android:textSize="13sp" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_marginBottom="8dp"
-                android:layout_marginEnd="20dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:layout_weight="1"
-                android:text="@string/linear_layout"
-                android:onClick="LinearLayout"
-            />
+                android:orientation="horizontal">
 
-            <RadioButton
-                android:id="@+id/radiobutton_relativeLayout"
-                android:layout_width="78dp"
+                <RadioButton
+                    android:id="@+id/radiobutton_linearLayout"
+                    android:layout_width="78dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:onClick="LinearLayout"
+                    android:text="@string/linearLayout" />
+
+                <RadioButton
+                    android:id="@+id/radiobutton_relativeLayout"
+                    android:layout_width="78dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:onClick="RelativeLayout"
+                    android:text="@string/relativeLayout" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/titleOrientation"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_weight="1"
-                android:text="@string/relative_layout"
-                android:onClick="RelativeLayout"
-            />
+                android:paddingVertical="@dimen/paddingTitlePurple"
+                android:background="@color/purple"
+                android:text="@string/orientationTitle"
+                android:textSize="@dimen/titlePurple"
+                />
 
-        </RadioGroup>
+            <TextView
+                android:id="@+id/textOrientation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="@dimen/paddingTitlePurple"
+                android:text="@string/orientationText" />
+
+            <TextView
+                android:id="@+id/titleViews"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/purple"
+                android:paddingVertical="@dimen/paddingTitlePurple"
+                android:text="@string/titleViews"
+                android:textSize="@dimen/titlePurple" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/viewsButtonText"
+                android:onClick="ViewsDemos"/>
+
+        </LinearLayout>
     </ScrollView>
 
 </LinearLayout>

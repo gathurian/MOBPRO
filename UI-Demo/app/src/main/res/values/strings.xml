@@ -1,18 +1,20 @@
 <resources>
     <string name="app_name">UI-Demo</string>
-    <string name="linear_layout">Linear Layout</string>
-    <string name="relative_layout">Relative Layout</string>
-    <string name="i_am_a_linear_layout">I am a Linear-Layout</string>
-    <string name="i_am_a_constraint_layout">I am a Constraint-Layout</string>
-    <string name="ui_demo">UI-Demo</string>
-    <string name="produkt_id">Produkt-ID</string>
-    <string name="menge">Menge</string>
-    <string name="sondertarif">Sondertarif</string>
-    <string name="preis_berechnen">Preis berechnen</string>
-    <string name="alle_preisangaben_ohne_gew_hr">Preisangaben ohne Gewähr</string>
-    <string name="ich_bin_ein_vertikales_linearlayout">Ich bin ein vertikales LinearLayout</string>
-    <string name="ich_bin_ein_horizontales_linearlayout">Ich bin ein horizontales LinearLayout</string>
-    <string name="hslu_mobile_programming">HSLU - Mobile Programming</string>
-    <string name="willkommen_zum_zweiten_kursblock">Willkommen zum zweiten Kursblock!</string>
-    <string name="_1_layout">1. Layout</string>
+    <string name="linearLayout">Linear Layout</string>
+    <string name="relativeLayout">Relative Layout</string>
+    <string name="productId">Produkt-ID</string>
+    <string name="amount">Menge</string>
+    <string name="specialPrice">Sondertarif</string>
+    <string name="calculatePrice">Preis berechnen</string>
+    <string name="priceDisclaimer">Preisangaben ohne Gewähr</string>
+    <string name="verticalLinearLayout">Ich bin ein vertikales LinearLayout</string>
+    <string name="horizontalLinearLayout">Ich bin ein horizontales LinearLayout</string>
+    <string name="title">HSLU - Mobile Programming</string>
+    <string name="welcome">Willkommen zum zweiten Kursblock!</string>
+    <string name="layoutTitle">1. Layout</string>
+    <string name="layoutText">Wähle eines der folgenden Layouts für eine Demo</string>
+    <string name="orientationTitle">2. Screen-Orientation und Übersetzung</string>
+    <string name="orientationText">Diese Seite hat ein angepasstes Layout für Landscape Mode. Probier es aus! Ausserdem kann sie auch Schweizerdeutsch. Stelle die Sprache im Emulator auf Deutsch (Schweiz) um, und starte die App erneut</string>
+    <string name="titleViews">3. Views und Events</string>
+    <string name="viewsButtonText">Seite mit Views Demos anzeigen</string>
 </resources>

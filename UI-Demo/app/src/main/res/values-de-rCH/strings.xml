@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">UI-Demo</string>
+    <string name="linearLayout">Linears Layout</string>
+    <string name="relativeLayout">Relativs Layout</string>
+    <string name="productId">Produkt-ID</string>
+    <string name="amount">Mängi</string>
+    <string name="specialPrice">Schpezielle Priis</string>
+    <string name="calculatePrice">Priis berechne</string>
+    <string name="priceDisclaimer">Priisagabe sind ohni Gwäähr</string>
+    <string name="verticalLinearLayout">Ich bi es vertikals Linearlayout</string>
+    <string name="horizontalLinearLayout">Ich bi es horizontals LinearLayout</string>
+    <string name="title">HSLU - Mobile Programming</string>
+    <string name="welcome">Willkomme zum zweite Kursblock!</string>
+    <string name="layoutTitle">1. Layout</string>
+    <string name="layoutText">Wähl eis vo de folgende Layouts für en Demo us</string>
+    <string name="orientationTitle">2. Screen-Orientation und Übersetzig</string>
+    <string name="orientationText">Die Site hed es apassts Layout für Landschaftsmodus. Probiers us! Usserdem chan sie au Schwizerdütsch. Stell d Sprach im Emulator uf Deutsch (Schweiz) um und starte d App nomal neu</string>
+</resources>

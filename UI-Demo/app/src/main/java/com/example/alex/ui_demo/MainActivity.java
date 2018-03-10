@@ -33,6 +33,10 @@ public class MainActivity extends AppCompatActivity {
         Intent i = new Intent(this, LayoutDemoActivity.class);
         i.putExtra("layout",R.layout.layoutdemo_constraintlayout);
         startActivity(i);
+    }
 
+    public void ViewsDemos(View view){
+        Intent i = new Intent(this,ViewsDemoActivity.class);
+        startActivity(i);
     }
 }

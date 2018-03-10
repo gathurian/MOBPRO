@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/layout"
+        android:layout_width="295dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/titleLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/purple"
+            android:paddingVertical="@dimen/paddingTitlePurple"
+            android:text="@string/layoutTitle" />
+
+        <TextView
+            android:id="@+id/layoutChooser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/layoutText" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/radiobutton_linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="LinearLayout"
+                android:text="@string/linearLayout" />
+
+            <RadioButton
+                android:id="@+id/radiobutton_relativeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="RelativeLayout"
+                android:text="@string/relativeLayout" />
+        </RadioGroup>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/orientationAndView"
+        android:layout_width="323dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/titleOrientation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/orientationTitle" />
+    </LinearLayout>
+</LinearLayout>
