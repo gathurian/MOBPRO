@@ -1,63 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/mainLayout"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".MainActivity"
+    >
     <LinearLayout
-        android:id="@+id/layout"
-        android:layout_width="295dp"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:id="@+id/mainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
 
-        <TextView
-            android:id="@+id/titleLayout"
+        <LinearLayout
+            android:id="@+id/layout"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/titleLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/purple"
+                android:paddingVertical="@dimen/paddingTitlePurple"
+                android:text="@string/layoutTitle" />
+
+            <TextView
+                android:id="@+id/layoutChooser"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/layoutText" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/radiobutton_linearLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="LinearLayout"
+                    android:text="@string/linearLayout" />
+
+                <RadioButton
+                    android:id="@+id/radiobutton_relativeLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="RelativeLayout"
+                    android:text="@string/relativeLayout" />
+            </RadioGroup>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/orientationAndView"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/titleOrientation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/purple"
+                android:paddingVertical="@dimen/paddingTitlePurple"
+                android:text="@string/orientationTitle" />
+
+            <TextView
+            android:id="@+id/textOrientation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/purple"
             android:paddingVertical="@dimen/paddingTitlePurple"
-            android:text="@string/layoutTitle" />
+            android:text="@string/orientationText" />
 
-        <TextView
-            android:id="@+id/layoutChooser"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/layoutText" />
-
-        <RadioGroup
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <RadioButton
-                android:id="@+id/radiobutton_linearLayout"
+            <TextView
+                android:id="@+id/titleViews"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="LinearLayout"
-                android:text="@string/linearLayout" />
+                android:background="@color/purple"
+                android:paddingVertical="@dimen/paddingTitlePurple"
+                android:text="@string/titleViews"
+                android:textSize="@dimen/titlePurple" />
 
-            <RadioButton
-                android:id="@+id/radiobutton_relativeLayout"
+            <Button
+                android:id="@+id/button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="RelativeLayout"
-                android:text="@string/relativeLayout" />
-        </RadioGroup>
+                android:text="@string/viewsButtonText"
+                android:onClick="ViewsDemos"/>
 
-
+        </LinearLayout>
     </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/orientationAndView"
-        android:layout_width="323dp"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/titleOrientation"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/orientationTitle" />
-    </LinearLayout>
-</LinearLayout>
+</ScrollView>
