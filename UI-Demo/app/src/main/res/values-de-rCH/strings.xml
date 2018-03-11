@@ -15,4 +15,9 @@
     <string name="layoutText">Wähl eis vo de folgende Layouts für en Demo us</string>
     <string name="orientationTitle">2. Screen-Orientation und Übersetzig</string>
     <string name="orientationText">Die Site hed es apassts Layout für Landschaftsmodus. Probiers us! Usserdem chan sie au Schwizerdütsch. Stell d Sprach im Emulator uf Deutsch (Schweiz) um und starte d App nomal neu</string>
+    <string name="viewsButtonText">Siite mit Views Demos azeige</string>
+    <string name="titleViews">3. Views und Events</string>
+    <string name="rating">Bewärtig: </string>
+    <string name="rate">Gib din Sänf dezue</string>
+
 </resources>

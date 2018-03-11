@@ -17,4 +17,6 @@
     <string name="orientationText">Diese Seite hat ein angepasstes Layout für Landscape Mode. Probier es aus! Ausserdem kann sie auch Schweizerdeutsch. Stelle die Sprache im Emulator auf Deutsch (Schweiz) um, und starte die App erneut</string>
     <string name="titleViews">3. Views und Events</string>
     <string name="viewsButtonText">Seite mit Views Demos anzeigen</string>
+    <string name="rating">Bewertung: </string>
+    <string name="rate">Bewertung abgeben</string>
 </resources>
