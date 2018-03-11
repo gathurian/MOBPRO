@@ -8,4 +8,12 @@
         <item>Vernetzen von Multimedia-Geräten</item>
         <item>Green IT in 8 Stunden</item>
     </string-array>
+
+    <string-array name="dialogues">
+        <item>Toast</item>
+        <item>Dialog ohne Daten</item>
+        <item>Dialog mit Daten</item>
+        <item>Dialog mit eigenem Layout</item>
+        <item>Notification</item>
+    </string-array>
 </resources>

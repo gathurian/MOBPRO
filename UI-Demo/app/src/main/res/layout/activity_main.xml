@@ -104,7 +104,7 @@
                 android:layout_height="wrap_content"
                 android:background="@color/purple"
                 android:paddingVertical="@dimen/paddingTitlePurple"
-                android:text="@string/titleViews"
+                android:text="@string/viewsTitle"
                 android:textSize="@dimen/titlePurple" />
 
             <Button
@@ -120,7 +120,7 @@
                 android:layout_height="wrap_content"
                 android:background="@color/purple"
                 android:paddingVertical="@dimen/paddingTitlePurple"
-                android:text="@string/titleSpinner"
+                android:text="@string/spinnerTitle"
                 android:textSize="@dimen/titlePurple" />
 
             <TextView
@@ -128,7 +128,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingVertical="@dimen/paddingTitlePurple"
-                android:text="@string/textSpinner" />
+                android:text="@string/spinnerText" />
 
             <Spinner
                 android:id="@+id/spinner"
@@ -160,9 +160,24 @@
                 android:text="@string/stateSaveButtonText"
                 android:textAlignment="center" />
 
+            <TextView
+                android:id="@+id/dialogTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/purple"
+                android:paddingVertical="@dimen/paddingTitlePurple"
+                android:text="@string/dialogTitle"
+                android:textSize="@dimen/titlePurple" />
+
+            <Spinner
+                android:id="@+id/dialogSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/dialogues"
+                android:paddingVertical="@dimen/paddingTitlePurple"/>
+
         </LinearLayout>
     </ScrollView>
-
 </LinearLayout>
 
 

@@ -16,13 +16,16 @@
     <string name="orientationTitle">2. Screen-Orientation und Übersetzig</string>
     <string name="orientationText">Die Site hed es apassts Layout für Landschaftsmodus. Probiers us! Usserdem chan sie au Schwizerdütsch. Stell d Sprach im Emulator uf Deutsch (Schweiz) um und starte d App nomal neu</string>
     <string name="viewsButtonText">Siite mit Views Demos azeige</string>
-    <string name="titleViews">3. Views und Events</string>
+    <string name="viewsTitle">3. Views und Events</string>
     <string name="rating">Bewärtig: </string>
     <string name="rate">Gib din Sänf dezue</string>
-    <string name="titleSpinner">4. Spinner und ListActivity</string>
-    <string name="textSpinner">Wähl eine vo de folgende Informatikkürs</string>
+    <string name="spinnerTitle">4. Spinner und ListActivity</string>
+    <string name="spinnerText">Wähl eine vo de folgende Informatikkürs</string>
     <string name="stateSaveTitle">6. Zuestands-Zwüschespeicherig</string>
     <string name="stateSaveText">Drück de Chnopf es paar mal. Es wird en Toast mitem Zählerstand azeigt. Wenn jetz de Bildschirm dreihsch, wird de Zähler zruggsetzt. Das isch en huere Seich und sett ned so si!</string>
     <string name="stateSaveButtonText">Interne Zuestand ufesetze</string>
+    <string name="dialogTitle">7. Dialoge und Notifications</string>
+    <string name="customDialogText">Was empfinden Sie, wenn Sie dieses Bild ansehen?</string>
+    <string name="customDialogButton">Abschicken</string>
 
 </resources>

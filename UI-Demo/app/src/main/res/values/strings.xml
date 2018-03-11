@@ -15,13 +15,22 @@
     <string name="layoutText">Wähle eines der folgenden Layouts für eine Demo</string>
     <string name="orientationTitle">2. Screen-Orientation und Übersetzung</string>
     <string name="orientationText">Diese Seite hat ein angepasstes Layout für Landscape Mode. Probier es aus! Ausserdem kann sie auch Schweizerdeutsch. Stelle die Sprache im Emulator auf Deutsch (Schweiz) um, und starte die App erneut</string>
-    <string name="titleViews">3. Views und Events</string>
+    <string name="viewsTitle">3. Views und Events</string>
     <string name="viewsButtonText">Seite mit Views Demos anzeigen</string>
     <string name="rating">Bewertung: </string>
-    <string name="rate">Bewertung abgeben</string>
-    <string name="titleSpinner">4. Spinner und ListActivity</string>
-    <string name="textSpinner">Wähle einen der folgenden Informatik-Kurse</string>
+    <string name="spinnerTitle">4. Spinner und ListActivity</string>
+    <string name="spinnerText">Wähle einen der folgenden Informatik-Kurse</string>
     <string name="stateSaveTitle">6. Zustands-Zwischenspeicherung</string>
-    <string name="stateSaveText">Drücke den Knopf einige Male. Ein Toast mit dem internen Zählerstand wird angezeigt. Drehe das Device von Protrait in Landscape Mode. Der Zähler wird zurückgesetzt! Das darf nicht sein...</string>
+    <string name="stateSaveText">Drücke den Knopf einige Male. Ein Toast mit dem internen Zählerstand wird angezeigt. Drehe das Device von Protrait in Landscape Mode. Der Zähler wird zurückgesetzt! Das darf nicht sein…</string>
     <string name="stateSaveButtonText">Internen Zustand hochzählen</string>
+    <string name="dialogTitle">7. Dialoge und Notifications</string>
+    <string name="dialogWithDataMessage">"Kühlwasserzufuhr unterbrochen! \n Was nun?"</string>
+    <string name="dialogWithDataPos">Abschalten</string>
+    <string name="dialogWithDataToastPos">Reaktor wird abgeschaltet…</string>
+    <string name="dialogWithDataNeu">Weiss nicht</string>
+    <string name="dialogWithDataToastNeu">Problem an Support weitergeleitet…</string>
+    <string name="dialogWithDataNeg">Abwarten</string>
+    <string name="dialogWithDataToastNeg">OK, wir warten ab</string>
+    <string name="customDialogText">Was empfinden Sie, wenn Sie dieses Bild ansehen?</string>
+    <string name="customDialogButton">Abschicken</string>
 </resources>

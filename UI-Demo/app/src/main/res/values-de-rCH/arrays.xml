@@ -8,4 +8,11 @@
         <item>Vernetze vo Multimedia-Grät</item>
         <item>Grüeni IT i 8 Stund</item>
     </string-array>
+    <string-array name="dialogues">
+        <item>Toast</item>
+        <item>Dialog ohni Date</item>
+        <item>Dialog mit Date</item>
+        <item>Dialog mit eignem Layout</item>
+        <item>Benachrichtigung</item>
+    </string-array>
 </resources>
