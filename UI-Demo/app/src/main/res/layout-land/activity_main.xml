@@ -98,6 +98,53 @@
                 android:text="@string/viewsButtonText"
                 android:onClick="ViewsDemos"/>
 
+            <TextView
+                android:id="@+id/titleSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/purple"
+                android:paddingVertical="@dimen/paddingTitlePurple"
+                android:text="@string/titleSpinner"
+                android:textSize="@dimen/titlePurple" />
+
+            <TextView
+                android:id="@+id/textSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="@dimen/paddingTitlePurple"
+                android:text="@string/textSpinner" />
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/courses"/>
+
+            <TextView
+                android:id="@+id/stateSaverTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/purple"
+                android:paddingVertical="@dimen/paddingTitlePurple"
+                android:text="@string/stateSaveTitle"
+                android:textSize="@dimen/titlePurple" />
+
+            <TextView
+                android:id="@+id/textStateSave"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="@dimen/paddingTitlePurple"
+                android:text="@string/stateSaveText" />
+
+            <Button
+                android:id="@+id/buttonSaveState"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/stateSaveButtonText"
+                android:textAlignment="center" />
+
+
+
         </LinearLayout>
     </LinearLayout>
 </ScrollView>

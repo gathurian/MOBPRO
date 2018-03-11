@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="courses">
+        <item>Programmiere für Android Studio</item>
+        <item>Windows PowerShell V2</item>
+        <item>Mach meh us de USB-Schnittstell</item>
+        <item>TCP/IP i eim Tag</item>
+        <item>Vernetze vo Multimedia-Grät</item>
+        <item>Grüeni IT i 8 Stund</item>
+    </string-array>
+</resources>

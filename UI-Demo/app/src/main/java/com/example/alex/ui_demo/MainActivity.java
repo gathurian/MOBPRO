@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -15,6 +16,8 @@ public class MainActivity extends AppCompatActivity {
     RadioButton linearLayout;
     RadioButton relativeLayout;
     Spinner spinner;
+    int counter;
+    Button countButton;
 
 
     @Override
@@ -22,9 +25,20 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        counter = 0;
         linearLayout = (RadioButton) findViewById(R.id.radiobutton_linearLayout);
         relativeLayout = (RadioButton) findViewById(R.id.radiobutton_relativeLayout);
         spinner = (Spinner) findViewById(R.id.spinner);
+        countButton = (Button) findViewById(R.id.buttonSaveState);
+
+        countButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                counter++;
+                String countString = (String) Integer.toString(counter);
+                Toast.makeText(getApplicationContext(), countString, Toast.LENGTH_SHORT).show();
+            }
+        });
 
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -56,5 +70,17 @@ public class MainActivity extends AppCompatActivity {
     public void ViewsDemos(View view){
         Intent i = new Intent(this,ViewsDemoActivity.class);
         startActivity(i);
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        outState.putInt("KEY_COUNTER", counter);
+        super.onSaveInstanceState(outState);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState){
+        super.onRestoreInstanceState(savedInstanceState);
+        counter = savedInstanceState.getInt("KEY_COUNTER");
     }
 }

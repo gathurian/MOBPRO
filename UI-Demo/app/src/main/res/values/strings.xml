@@ -21,4 +21,7 @@
     <string name="rate">Bewertung abgeben</string>
     <string name="titleSpinner">4. Spinner und ListActivity</string>
     <string name="textSpinner">Wähle einen der folgenden Informatik-Kurse</string>
+    <string name="stateSaveTitle">6. Zustands-Zwischenspeicherung</string>
+    <string name="stateSaveText">Drücke den Knopf einige Male. Ein Toast mit dem internen Zählerstand wird angezeigt. Drehe das Device von Protrait in Landscape Mode. Der Zähler wird zurückgesetzt! Das darf nicht sein...</string>
+    <string name="stateSaveButtonText">Internen Zustand hochzählen</string>
 </resources>
