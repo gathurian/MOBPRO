@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Persistenz</string>
+    <string name="title">HSLU Mobile Programming</string>
+    <string name="preference_title">Application-Preferences</string>
+    <string name="preferences_text">MainActivity.onResume() wurde seit der Installation dieser App xx mal aufgerufen</string>
+    <string name="tea_preferences">Ich trinke am liebsten xx, xx</string>
+    <string name="tea_preference_button">TEE-PREFERENZEN EDITIEREN</string>
+    <string name="tea_default">TEE DEFAULT-PREFS SETZEN</string>
+    <string name="newResumeCount">0</string>
+</resources>

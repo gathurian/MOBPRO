@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/title" />
+
+        <TextView
+            android:id="@+id/preference_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/titleColor"
+            android:text="@string/preference_title" />
+
+        <TextView
+            android:id="@+id/preference_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/preferences_text" />
+
+        <TextView
+            android:id="@+id/tea_preference"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/tea_preferences" />
+
+        <Button
+            android:id="@+id/tea_preferenceButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/tea_preference_button" />
+
+        <Button
+            android:id="@+id/tea_defaults"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/tea_default" />
+
+    </LinearLayout>
+</ScrollView>
