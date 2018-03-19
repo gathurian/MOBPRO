@@ -4,17 +4,19 @@ import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    AppPreferenceActivity preferences;
     TextView onResume_text;
-    String onResumeCounter = "0";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        preferences = new AppPreferenceActivity();
     }
 
     @Override
@@ -31,4 +33,9 @@ public class MainActivity extends AppCompatActivity {
 
         onResume_text.setText("MainActivity.onResume() wurde seit der Installation dieser App " + newResumeCount + " mal aufgerufen");
     }
+
+    public void editPreferences(View view){
+        preferences.startPreferences();
+    }
+
 }

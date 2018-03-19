@@ -3,6 +3,7 @@ package com.example.alex.persistenz;
 import android.preference.PreferenceFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 
 public class AppPreferenceActivity extends AppCompatActivity {
 
@@ -17,5 +18,10 @@ public class AppPreferenceActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+    }
+
+    public void startPreferences(){
+        TeaPreferenceInitializer initializer = new TeaPreferenceInitializer();
+        Log.i("AppPreferenceActivity", "Der TeaPreferenceInitializer wurde initialisiert");
     }
 }
