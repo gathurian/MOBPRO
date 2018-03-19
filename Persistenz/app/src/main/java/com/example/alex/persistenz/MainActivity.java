@@ -2,10 +2,12 @@ package com.example.alex.persistenz;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.preference.ListPreference;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -36,6 +38,16 @@ public class MainActivity extends AppCompatActivity {
     public void editPreferences(View view){
         Intent prefs = new Intent(this,AppPreferenceActivity.class);
         startActivity(prefs);
+    }
+
+    public void defaultTeaSettings(View button){
+        SharedPreferences defaultPrefs = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = defaultPrefs.edit();
+
+        editor.putBoolean("sweetTea", true);
+        editor.putString("teaSweetener", "Rohrzucker");
+        editor.putString("teaPreferred", "Lipton/Pfefferminztee");
+        editor.apply();
     }
 
 }
