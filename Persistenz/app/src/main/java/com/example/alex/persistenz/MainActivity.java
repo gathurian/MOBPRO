@@ -1,5 +1,6 @@
 package com.example.alex.persistenz;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
@@ -9,14 +10,12 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    AppPreferenceActivity preferences;
     TextView onResume_text;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        preferences = new AppPreferenceActivity();
     }
 
     @Override
@@ -35,7 +34,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void editPreferences(View view){
-        preferences.startPreferences();
+        Intent prefs = new Intent(this,AppPreferenceActivity.class);
+        startActivity(prefs);
     }
 
 }

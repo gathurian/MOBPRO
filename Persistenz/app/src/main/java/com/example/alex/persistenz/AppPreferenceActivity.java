@@ -7,6 +7,14 @@ import android.util.Log;
 
 public class AppPreferenceActivity extends AppCompatActivity {
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        getFragmentManager().beginTransaction().replace(android.R.id.content,
+                new TeaPreferenceInitializer()).commit();
+    }
+
+
     public static final class TeaPreferenceInitializer extends PreferenceFragment{
         @Override
         public void onCreate(final Bundle savedInstanceState){
@@ -15,13 +23,4 @@ public class AppPreferenceActivity extends AppCompatActivity {
         }
     }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
-
-    public void startPreferences(){
-        TeaPreferenceInitializer initializer = new TeaPreferenceInitializer();
-        Log.i("AppPreferenceActivity", "Der TeaPreferenceInitializer wurde initialisiert");
-    }
 }

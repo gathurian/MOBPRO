@@ -39,7 +39,8 @@
             android:id="@+id/tea_preferenceButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/tea_preference_button" />
+            android:text="@string/tea_preference_button"
+            android:onClick="editPreferences"/>
 
         <Button
             android:id="@+id/tea_defaults"

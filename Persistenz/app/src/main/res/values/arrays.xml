@@ -8,6 +8,9 @@
     </string-array>
 
     <string-array name="teaSweeternerValues">
-
+        <item>Rohrzucker</item>
+        <item>Kristallzucker</item>
+        <item>Süssungsstoff</item>
+        <item>Würfelzucker</item>
     </string-array>
 </resources>
