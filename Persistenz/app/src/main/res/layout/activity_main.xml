@@ -49,5 +49,26 @@
             android:text="@string/tea_default"
             android:onClick="defaultTeaSettings"/>
 
+        <TextView
+            android:id="@+id/saveLoadText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/titleColor"
+            android:text="@string/dateisystem" />
+
+        <CheckBox
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="Externen Speicher benutzen" />
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textMultiLine"
+            android:text="Irgendein Text \n \n"/>
+
     </LinearLayout>
 </ScrollView>

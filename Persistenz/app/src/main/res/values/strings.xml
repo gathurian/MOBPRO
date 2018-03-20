@@ -7,4 +7,5 @@
     <string name="tea_preference_button">TEE-PREFERENZEN EDITIEREN</string>
     <string name="tea_default">TEE DEFAULT-PREFS SETZEN</string>
     <string name="newResumeCount">0</string>
+    <string name="dateisystem">Dateisystem</string>
 </resources>

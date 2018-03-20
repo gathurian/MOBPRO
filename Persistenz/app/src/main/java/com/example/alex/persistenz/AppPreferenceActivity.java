@@ -1,5 +1,6 @@
 package com.example.alex.persistenz;
 
+import android.preference.EditTextPreference;
 import android.preference.PreferenceFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
