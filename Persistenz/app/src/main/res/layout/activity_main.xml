@@ -57,18 +57,46 @@
             android:text="@string/dateisystem" />
 
         <CheckBox
+            android:id="@+id/writeToSDCard"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:checked="false"
             android:text="Externen Speicher benutzen" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Erfasse eine Notiz" />
 
         <EditText
             android:id="@+id/editText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textMultiLine"
-            android:text="Irgendein Text \n \n"/>
+            android:inputType="textMultiLine"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/saveText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Speichern"
+                android:onClick="saveData"/>
+
+            <Button
+                android:id="@+id/LoadText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Laden"
+                android:onClick="loadData"/>
+        </LinearLayout>
 
     </LinearLayout>
 </ScrollView>
