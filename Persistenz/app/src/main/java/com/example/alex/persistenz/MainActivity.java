@@ -95,40 +95,11 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "You haven't written anything yet", Toast.LENGTH_SHORT).show();
         } else {
             if (sdCard.isChecked()) {
-                boolean ExternalStorageAvailable = false;
-                boolean ExternalStorageWritable = false;
-                String state = Environment.getExternalStorageState();
-
-                if (Environment.MEDIA_MOUNTED.equals(state)) {    //Check if SD-Card is mounted
-                    ExternalStorageAvailable = ExternalStorageWritable = true;
-                } else if (Environment.MEDIA_MOUNTED_READ_ONLY.equals(state)) {       //Check if SD-Card is writable
-                    ExternalStorageWritable = false;
-                    ExternalStorageAvailable = true;
-                } else {
-                    ExternalStorageWritable = ExternalStorageAvailable = false;
-                }
-
-                if(checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
-                    File directory = new File(android.os.Environment.getExternalStorageDirectory().getAbsolutePath() + "/persistence");
-                    directory.mkdirs();
-                    File notes = new File(directory, "notes.txt");
-                    if (ExternalStorageAvailable == ExternalStorageWritable == true) {
-                        try {
-                            FileOutputStream fOut = new FileOutputStream(notes);
-                            PrintWriter pw = new PrintWriter(fOut);
-                            pw.print(data.getText().toString());
-                            pw.flush();
-                            pw.close();
-                            fOut.close();
-                            Toast.makeText(getApplicationContext(), "file saved", Toast.LENGTH_SHORT).show();
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
-                    } else {
-                        Toast.makeText(getApplicationContext(), "Could not write to SD-Card. Is it mounted?", Toast.LENGTH_SHORT).show();
-                    }
-                } else {
+                int grant = checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
+                if(grant != PackageManager.PERMISSION_GRANTED) {
                     requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},23);
+                } else {
+                    writeSDCard();
                 }
             } else {
                 try {
@@ -152,24 +123,11 @@ public class MainActivity extends AppCompatActivity {
         data.setText("");
 
         if(sdCard.isChecked()){
-            if(checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
-                try {
-                    final File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/persistence", "notes.txt");
-                    FileInputStream fis = new FileInputStream(file);
-                    InputStreamReader is = new InputStreamReader(fis);
-                    BufferedReader br = new BufferedReader(is);
-                    StringBuilder sb = new StringBuilder();
-                    String stLine;
-                    while ((stLine = br.readLine()) != null) {
-                        sb.append(stLine);
-                    }
-                    data.setText(sb.toString());
-
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            } else{
+            int grant = checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE);
+            if(grant != PackageManager.PERMISSION_GRANTED) {
                 requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},24);
+            } else{
+               readSDCard();
             }
 
         } else {
@@ -187,6 +145,80 @@ public class MainActivity extends AppCompatActivity {
             } catch (Exception e) {
                 e.printStackTrace();
             }
+        }
+    }
+
+    private void writeSDCard(){
+        EditText data = (EditText) findViewById(R.id.editText);
+
+        boolean ExternalStorageAvailable = false;
+        boolean ExternalStorageWritable = false;
+        String state = Environment.getExternalStorageState();
+
+        if (Environment.MEDIA_MOUNTED.equals(state)) {    //Check if SD-Card is mounted
+            ExternalStorageAvailable = ExternalStorageWritable = true;
+        } else if (Environment.MEDIA_MOUNTED_READ_ONLY.equals(state)) {       //Check if SD-Card is writable
+            ExternalStorageWritable = false;
+            ExternalStorageAvailable = true;
+        } else {
+            ExternalStorageWritable = ExternalStorageAvailable = false;
+        }
+
+        File directory = new File(android.os.Environment.getExternalStorageDirectory().getAbsolutePath() + "/persistence");
+        directory.mkdirs();
+        File notes = new File(directory, "notes.txt");
+        if (ExternalStorageAvailable == ExternalStorageWritable == true) {
+            try {
+                FileOutputStream fOut = new FileOutputStream(notes);
+                PrintWriter pw = new PrintWriter(fOut);
+                pw.print(data.getText().toString());
+                pw.flush();
+                pw.close();
+                fOut.close();
+                Toast.makeText(getApplicationContext(), "file saved", Toast.LENGTH_SHORT).show();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } else {
+            Toast.makeText(getApplicationContext(), "Could not write to SD-Card. Is it mounted?", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void readSDCard(){
+        EditText data = (EditText) findViewById(R.id.editText);
+        try {
+            final File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/persistence", "notes.txt");
+            FileInputStream fis = new FileInputStream(file);
+            InputStreamReader is = new InputStreamReader(fis);
+            BufferedReader br = new BufferedReader(is);
+            StringBuilder sb = new StringBuilder();
+            String stLine;
+            while ((stLine = br.readLine()) != null) {
+                sb.append(stLine);
+            }
+            data.setText(sb.toString());
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults){
+        switch (requestCode){
+            case 24:
+                if(grantResults.length > 0 && grantResults[0] != PackageManager.PERMISSION_GRANTED){
+                    Toast.makeText(this, "Permission " + permissions[0] + " denied!", Toast.LENGTH_SHORT).show();
+                } else {
+                    readSDCard();
+                }
+            case 23:
+                if(grantResults.length > 0 && grantResults[0] != PackageManager.PERMISSION_GRANTED){
+                    Toast.makeText(this, "Permission " + permissions[0] + " denied!", Toast.LENGTH_SHORT).show();
+                } else {
+                    writeSDCard();
+                }
+                break;
         }
     }
 
