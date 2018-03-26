@@ -20,8 +20,8 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(getApplicationContext(), HttpDemosActivity.class);
-                startActivity(myIntent);
+                Intent httpActivity = new Intent(getApplicationContext(), HttpDemosActivity.class);
+                startActivity(httpActivity);
             }
         });
     }
