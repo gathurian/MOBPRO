@@ -36,12 +36,42 @@
         android:layout_height="wrap_content"
         android:layout_weight="0"
         android:onClick="loadBinaryDataText"
-        android:text="Lade Dokument (Text" />
+        android:text="Lade Dokument (Text)" />
 
     <TextView
         android:id="@+id/document"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0"
-        android:text="TextView" />
+        android:text="Text" />
+
+    <Button
+        android:id="@+id/loadXML"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:onClick="loadXML"
+        android:text="Lade Dokument (XML)" />
+
+    <TextView
+        android:id="@+id/xml"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:text="XML" />
+
+    <Button
+        android:id="@+id/loadJSON"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:onClick="loadJSON"
+        android:text="Lade Dokument (JSON)" />
+
+    <TextView
+        android:id="@+id/json"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:text="JSON" />
 </LinearLayout>

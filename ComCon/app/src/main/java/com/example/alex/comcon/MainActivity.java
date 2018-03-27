@@ -1,11 +1,14 @@
 package com.example.alex.comcon;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+import java.net.URL;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,10 +35,11 @@ public class MainActivity extends AppCompatActivity {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if((thread == null) || (!thread.isAlive())){
-                    thread = waitForSevenSeconds(button1);
+                final Button demoButton = (Button) view;
+                if((thread == null) || !(thread.isAlive())){
+                    thread = waitForSevenSeconds(demoButton);
                     thread.start();
-                    button1.setText("Demotrhread läuft");
+                    button1.setText("Demothread läuft");
                 } else {
                     Toast.makeText(getApplicationContext(), "DemoThread läuft schon!", Toast.LENGTH_SHORT).show();
                 }
@@ -66,3 +70,4 @@ public class MainActivity extends AppCompatActivity {
 
 
 }
+
