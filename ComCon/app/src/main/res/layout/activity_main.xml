@@ -9,16 +9,24 @@
 
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/httpButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0"
         android:text="Kommunikation mit HTTP-Server" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/demoThreadButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0"
         android:text="DemoThread starten" />
+
+    <Button
+        android:id="@+id/asyncTaskButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:onClick="startMultiAsyncTask"
+        android:text="AsyncTask starten" />
 </LinearLayout>

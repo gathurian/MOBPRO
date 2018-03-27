@@ -8,12 +8,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import java.net.MalformedURLException;
 import java.net.URL;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button button;
-    Button button1;
+    Button httpButton;
+    Button demoThreadButton;
     Thread thread;
 
     @Override
@@ -21,9 +22,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        button = (Button) findViewById(R.id.button);
+        httpButton = (Button) findViewById(R.id.httpButton);
 
-        button.setOnClickListener(new View.OnClickListener() {
+        httpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent httpActivity = new Intent(getApplicationContext(), HttpDemosActivity.class);
@@ -31,15 +32,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        button1 = (Button) findViewById(R.id.button2);
-        button1.setOnClickListener(new View.OnClickListener() {
+        demoThreadButton = (Button) findViewById(R.id.demoThreadButton);
+        demoThreadButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 final Button demoButton = (Button) view;
-                if((thread == null) || !(thread.isAlive())){
+                if ((thread == null) || !(thread.isAlive())) {
                     thread = waitForSevenSeconds(demoButton);
                     thread.start();
-                    button1.setText("Demothread läuft");
+                    demoThreadButton.setText("Demothread läuft");
                 } else {
                     Toast.makeText(getApplicationContext(), "DemoThread läuft schon!", Toast.LENGTH_SHORT).show();
                 }
@@ -48,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private Thread waitForSevenSeconds(final Button button){
+    private Thread waitForSevenSeconds(final Button button) {
         return new Thread("DemoThread") {
             @Override
             public void run() {
@@ -68,6 +69,19 @@ public class MainActivity extends AppCompatActivity {
         };
     }
 
-
+    public void startMultiAsyncTask(View view) {
+        AsyncTask asyncTask = new MultiAsyncTask(this);
+        try {
+            URL[] urls = new URL[4];
+            for(int i=0;i<4;i++){
+                urls[i] = new URL("http://wherever.ch/hslu/title"+i+".txt");
+            }
+            asyncTask.execute(urls);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+    }
 }
+
+
 
