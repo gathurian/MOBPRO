@@ -2,97 +2,98 @@ package com.example.alex.comcon;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.media.Image;
-import android.renderscript.ScriptGroup;
-import android.support.v7.app.AppCompatActivity;
+import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Base64;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.io.BufferedInputStream;
+import org.w3c.dom.Text;
+
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
 
 public class HttpDemosActivity extends AppCompatActivity {
-
-    Button loadBinary;
-    Button loadDocument;
-    ImageView bitMap;
-    TextView document;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_http_demos);
-
-        loadBinary = (Button) findViewById(R.id.loadBinary);
-        loadDocument = (Button) findViewById(R.id.loadDocument);
-        bitMap = (ImageView) findViewById(R.id.bitMap);
-        document = (TextView) findViewById(R.id.document);
-
-        loadBinary.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                InputStream stream = openHttpConnection("http://wherever.ch/hslu/homer.jpg");
-                Bitmap bmp = BitmapFactory.decodeStream(stream);
-                bitMap.setImageBitmap(bmp);
-            }
-        });
-
-        loadDocument.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                InputStream stream = openHttpConnection("http://wherever.ch/hslu/loremIpsum.txt");
-                String data = convertStreamToString(stream);
-                Log.d("DATA", data);
-                //document.setText(data);
-            }
-        });
     }
 
-    private InputStream openHttpConnection(String urlString){
-        InputStream stream = new InputStream() {
-            @Override
-            public int read() throws IOException {
-                return 0;
-            }
-        };
+    String urlStringtext = "http://wherever.ch/hslu/loremIpsum.txt";
+    String urlStringpicture = "http://wherever.ch/hslu/homer.jpg";
 
+    public void loadBinaryDataPicture(View view) {
+        DownloadImageTask downloadImageTask = new DownloadImageTask((ImageView) findViewById(R.id.bitMap));
+        downloadImageTask.execute(urlStringpicture);
+    }
+
+    public void loadBinaryDataText(View view) {
+        DownloadTextTask downloadTextTask = new DownloadTextTask((TextView) findViewById(R.id.document));
+        downloadTextTask.execute(urlStringtext);
+    }
+
+}
+
+class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
+    ImageView bitMap;
+
+    DownloadImageTask(ImageView bmImage) {
+        this.bitMap = bmImage;
+    }
+
+    protected Bitmap doInBackground(String... urls) {
+        String urldisplay = urls[0];
+        Bitmap mIcon11 = null;
         try {
-            URL url = new URL(urlString);
-            HttpURLConnection httpConnection = (HttpURLConnection) url.openConnection();
-            httpConnection.setInstanceFollowRedirects(true);
-            httpConnection.connect();
-            if (httpConnection.getResponseCode() == HttpURLConnection.HTTP_OK) {
-                stream = httpConnection.getInputStream();
-            }
+            InputStream in = new java.net.URL(urldisplay).openStream();
+            mIcon11 = BitmapFactory.decodeStream(in);
         } catch (Exception e) {
+            Log.e("Error", e.getMessage());
             e.printStackTrace();
         }
-        return stream;
+        return mIcon11;
     }
 
-    public static String convertStreamToString(InputStream is) {
-        StringBuilder text= new StringBuilder();
-        String line;
-        BufferedReader reader = new BufferedReader(new InputStreamReader(is));
-        try {
-            while((line = reader.readLine()) != null) {
-                text.append(line);
-                text.append("\n");
-            }
-            return text.toString();
-        } catch (IOException e) {
-            e.printStackTrace();
-            return "";
-        }
+    protected void onPostExecute(Bitmap result) {
+        bitMap.setImageBitmap(result);
     }
 }
+
+class DownloadTextTask extends AsyncTask<String, Void, String> {
+    TextView textFromURL;
+
+    public DownloadTextTask(TextView textImage) {
+        this.textFromURL = textImage;
+    }
+
+    protected String doInBackground(String... urls) {
+        StringBuilder text = new StringBuilder();
+        try {
+            InputStream in = new java.net.URL(urls[0]).openStream();
+            String loadedText;
+            BufferedReader reader = new BufferedReader(new InputStreamReader(in));
+            while((loadedText = reader.readLine()) != null) {
+                text.append(loadedText);
+                text.append("\n");
+            }
+            reader.close();
+        } catch (Exception e) {
+            Log.e("Error", e.getMessage());
+            e.printStackTrace();
+        }
+        return text.toString();
+    }
+
+    protected void onPostExecute(String result) {
+        textFromURL.setText(result);
+    }
+}
+
+
+
+
