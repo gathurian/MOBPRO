@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="3pt"
+    tools:context="com.example.alex.servicesreceiver.MainActivity">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:paddingBottom="5pt"
+        android:text="HSLU Mobile Programming"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+
+    <TextView
+        android:id="@+id/title-text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:paddingBottom="10pt"
+        android:text="Heute geht's um Services undBroadcast Receivers, d.h. um Hintergrund-Komponenten von Android" />
+
+    <TextView
+        android:id="@+id/servicesTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:background="#006800"
+        android:padding="3pt"
+        android:text="Services" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0">
+
+        <Button
+            android:id="@+id/startServiceButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Service starten" />
+
+        <Button
+            android:id="@+id/stopServiceButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="service stoppen" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/intentServiceButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:text="intent service starten" />
+
+    <CheckBox
+        android:id="@+id/connectionServiceCheckbox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:text="Verbindung mit Service getrennt" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0">
+
+        <Button
+            android:id="@+id/callServiceButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="service abfragen" />
+
+        <Button
+            android:id="@+id/resetcounter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="zähler zurücksetzen" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/broadcastTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:background="#006800"
+        android:padding="3pt"
+        android:text="Broadcast Receivers" />
+
+    <CheckBox
+        android:id="@+id/braodcastCheckbox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:text="Kein BroadcastReceiver registriert" />
+
+    <TextView
+        android:id="@+id/braadcastMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:text="Nachricht vom BraodcastReceiver" />
+
+    <Button
+        android:id="@+id/sendBroadcastButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:text="Broadcast verschicken" />
+</LinearLayout>
