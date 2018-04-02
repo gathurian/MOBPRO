@@ -10,6 +10,7 @@ public class MainActivity extends AppCompatActivity {
 
     Button startDemoService;
     Button stopDemoService;
+    Button intentService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
         startDemoService = (Button) findViewById(R.id.startServiceButton);
         stopDemoService = (Button) findViewById(R.id.stopServiceButton);
+        intentService = (Button) findViewById(R.id.intentServiceButton);
 
         startDemoService.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -31,6 +33,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 stopService(new Intent(getApplicationContext(), DemoService.class));
+            }
+        });
+
+        intentService.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentService = new Intent(getApplicationContext(), DemoIntentService.class);
+                startService(intentService);
             }
         });
     }

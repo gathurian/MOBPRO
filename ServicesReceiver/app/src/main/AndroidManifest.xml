@@ -18,6 +18,7 @@
         </activity>
 
         <service android:name=".DemoService" />
+        <service android:name=".DemoIntentService" />
     </application>
 
 </manifest>

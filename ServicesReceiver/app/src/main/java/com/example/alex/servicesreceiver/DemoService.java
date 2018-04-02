@@ -8,7 +8,11 @@ import android.support.annotation.Nullable;
 import android.util.Log;
 
 
-public class DemoService extends Service {
+public class DemoService extends Service implements DemoServiceApi {
+
+    public DemoService(){
+
+    }
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId){
@@ -33,7 +37,9 @@ public class DemoService extends Service {
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
-        return null;
+        getNumberOfJobsRunning();
+        getNumberOfJobsCompleted();
+        resetCounters();
     }
 
     @Override
