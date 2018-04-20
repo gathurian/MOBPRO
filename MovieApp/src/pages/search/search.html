@@ -10,10 +10,12 @@
   <h3>Search</h3>
 
   <p>
-    Search for your favourite Movies
+    Enter the movie title to search for below and press the enter key or the search button.
   </p>
 
-  <button ion-button secondary menuToggle>Show native Demo</button>
+  <ion-input placeholder="Movie title" [(ngModel)]="searchQuery" type="text" (keyup.enter)="doSearch()"></ion-input>
+
+  <button ion-button type="submit" (click)=doSearch()>Search</button>
 
 </ion-content>
 <ion-footer>
