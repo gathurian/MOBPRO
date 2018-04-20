@@ -3,6 +3,7 @@ import {NavController} from 'ionic-angular';
 import {HttpClient} from "@angular/common/http";
 import {Movie} from "../../interfaces/Movie";
 import {DetailPage} from "../details/details";
+import {AlertController} from "ionic-angular";
 
 @Component({
   selector: 'page-search',
@@ -24,12 +25,18 @@ export class SearchPage {
           "Plot: " + movie.Plot;
         this.navCtrl.push(DetailPage)
       } else {
-        alert(movie.Error);
+        let alert = this.alertCtrl.create({
+          title: 'Error',
+          subTitle: movie.Error,
+          buttons: ['Try Again']
+        });
+        alert.present();
+
       }
     })
   }
 
-  constructor(public navCtrl: NavController, public httpClient: HttpClient) {
+  constructor(public navCtrl: NavController, public httpClient: HttpClient, private alertCtrl:AlertController) {
 
   }
 
