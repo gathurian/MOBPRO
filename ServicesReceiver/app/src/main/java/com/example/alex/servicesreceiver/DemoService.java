@@ -40,6 +40,7 @@ public class DemoService extends Service implements DemoServiceApi {
         getNumberOfJobsRunning();
         getNumberOfJobsCompleted();
         resetCounters();
+        return null;
     }
 
     @Override
@@ -52,5 +53,20 @@ public class DemoService extends Service implements DemoServiceApi {
     public void onDestroy() {
         super.onDestroy();
         Log.d("Demoservice", "Demoservice gestoppt");
+    }
+
+    @Override
+    public int getNumberOfJobsRunning() {
+        return 0;
+    }
+
+    @Override
+    public int getNumberOfJobsCompleted() {
+        return 0;
+    }
+
+    @Override
+    public void resetCounters() {
+
     }
 }
