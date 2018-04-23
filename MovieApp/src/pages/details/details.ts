@@ -1,9 +1,5 @@
-import {Component, forwardRef, Inject} from '@angular/core';
-import { NavController } from 'ionic-angular';
-import { SearchPage} from "../search/search";
-import {Movie} from "../../interfaces/Movie";
-import {HttpClient} from "@angular/common/http";
-
+import {Component} from '@angular/core';
+import {NavController, NavParams} from 'ionic-angular';
 
 
 @Component({
@@ -12,10 +8,21 @@ import {HttpClient} from "@angular/common/http";
 })
 export class DetailPage {
 
-  data:string;
+  title:string;
+  year:string;
+  director:string;
+  country:string;
+  plot:string;
+  poster:string;
 
-  constructor(public navCtrl: NavController, @Inject(forwardRef(() => SearchPage)) public srcPage:
-  SearchPage) {
+  constructor(public navCtrl: NavController, navParams:NavParams) {
+    this.title = navParams.get('Title');
+    this.year = navParams.get('Year');
+    this.director = navParams.get('Director');
+    this.country = navParams.get('Country');
+    this.plot = navParams.get('Plot');
+    this.poster = navParams.get('Poster');
+
   }
 
 }

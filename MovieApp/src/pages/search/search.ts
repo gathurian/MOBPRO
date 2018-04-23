@@ -10,8 +10,6 @@ import {AlertController} from "ionic-angular";
   templateUrl: 'search.html'
 })
 export class SearchPage {
-  movieData: string;
-
   searchQuery: string;
 
   doSearch(): void {
@@ -19,11 +17,7 @@ export class SearchPage {
     movieJson.subscribe(data => {
       let movie: Movie = <Movie>data;
       if ((movie.Response == 'True') && (this.searchQuery != null)) {
-        this.movieData = "Title: " + movie.Title + "\n" +
-          "Year: " + movie.Year + "\n" +
-          "Director: " + movie.Director + "\n" +
-          "Plot: " + movie.Plot;
-        this.navCtrl.push(DetailPage)
+        this.navCtrl.push(DetailPage, data)
       } else {
         let errorAlert = this.alertCtrl.create({
           title: 'Error',
@@ -37,10 +31,6 @@ export class SearchPage {
 
       }
     })
-  }
-
-  public getMovieData(): string {
-    return this.movieData;
   }
 
   constructor(public navCtrl: NavController, public httpClient: HttpClient, private alertCtrl: AlertController) {

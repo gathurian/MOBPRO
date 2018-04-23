@@ -3,18 +3,20 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Movie App</ion-title>
+    <ion-title>Movie App - Details</ion-title>
   </ion-navbar>
 </ion-header>
 <ion-content padding>
-  <h3>Details</h3>
 
-  <p>
-   Details about your selected Movie
-  </p>
-
-  TODO: Fix this shit
-
+  <h2>{{title}}</h2>
+  <h3>{{director}}</h3>
+  <h4>{{country}}, {{year}}</h4>
+  <div class="plot">
+    <p>
+      {{plot}}
+    </p>
+    <img src="{{poster}}"/>
+  </div>
 </ion-content>
 <ion-footer>
   <ion-toolbar>
