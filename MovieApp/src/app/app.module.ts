@@ -29,8 +29,7 @@ import { HttpClientModule } from "@angular/common/http";
     MyApp,
     HomePage,
     DetailPage,
-    SearchPage,
-    DetailPage
+    SearchPage
   ],
   providers: [
     StatusBar,
