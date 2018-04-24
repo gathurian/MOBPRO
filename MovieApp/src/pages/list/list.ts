@@ -19,7 +19,7 @@ export class ListPage {
 
     this.movies = [];
     for (let i = 1; i <= 5; i++) {
-      let movieJson = this.httpClient.get('../assets/movies/' + i + '.json');
+      let movieJson = this.httpClient.get('./assets/movies/' + i + '.json');
       movieJson.subscribe(data => {
           let movie: Movie = <Movie>data;
           this.movies.push(movie);
