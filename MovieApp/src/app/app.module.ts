@@ -17,7 +17,8 @@ import { HttpClientModule } from "@angular/common/http";
     MyApp,
     HomePage,
     SearchPage,
-    DetailPage
+    DetailPage,
+    ListPage
   ],
   imports: [
     BrowserModule,
@@ -29,7 +30,8 @@ import { HttpClientModule } from "@angular/common/http";
     MyApp,
     HomePage,
     DetailPage,
-    SearchPage
+    SearchPage,
+    ListPage
   ],
   providers: [
     StatusBar,
